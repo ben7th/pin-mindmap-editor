@@ -6,6 +6,18 @@ RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/app_config.yml")[RAILS_ENV]
+USER_API_SITE = APP_CONFIG['USER_API_SITE']
+API_SITE = APP_CONFIG['API_SITE']
+SECRET_KEY = APP_CONFIG['SECRET_KEY']
+THIS_SITE = APP_CONFIG['THIS_SITE']
+APP_PREFIX = APP_CONFIG['APP_PREFIX']
+ATTACHED_FILE_PATH_ROOT = APP_CONFIG['ATTACHED_FILE_PATH_ROOT']
+ATTACHED_FILE_URL_ROOT = APP_CONFIG['ATTACHED_FILE_URL_ROOT']
+IMAGE_CACHE_SITE = APP_CONFIG['IMAGE_CACHE_SITE']
+
+URL_PREFIX = "#{API_SITE}/#{APP_PREFIX}"
+
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -19,6 +31,12 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
+  config.gem "mislav-will_paginate", :version => '2.3.11', :source => "http://gems.github.com/", :lib => "will_paginate"
+  config.gem "rubyzip", :version => '0.9.4', :lib => "zip/zip"
+  config.gem "haml"
+  config.gem "nokogiri"
+  config.gem "paperclip"
+  config.gem "uuidtools"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -27,6 +45,8 @@ Rails::Initializer.run do |config|
   # Skip frameworks you're not going to use. To use Rails without a database,
   # you must remove the Active Record framework.
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
+  config.load_paths += %W( #{RAILS_ROOT}/lib/controller_helper )
+  config.load_paths += %W( #{RAILS_ROOT}/lib/mindmap_module )
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
