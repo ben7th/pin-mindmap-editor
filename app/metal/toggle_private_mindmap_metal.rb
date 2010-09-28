@@ -1,3 +1,4 @@
+require "pie-service-lib"
 class TogglePrivateMindmapMetal < BaseMetal
   def self.routes
     {:method=>'PUT',:regexp=>/mindmaps\/(.+)\/toggle_private/}

@@ -61,14 +61,14 @@ class Mindmap < ActiveRecord::Base
     :default_style => :mini
 
 # 搜索方面的
-#  define_index do
-#    indexes :content
-#    indexes :title
-#
-#    has :user_id, :created_at,:updated_at
-#
-#    where "private <> TRUE"
-#  end
+  define_index do
+    indexes :content
+    indexes :title
+
+    has :user_id, :created_at,:updated_at
+
+    where "private <> TRUE"
+  end
 
   # 给平台发送分享
   def to_share

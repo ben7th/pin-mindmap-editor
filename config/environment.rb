@@ -9,6 +9,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/app_config.yml")[RAILS_ENV]
 USER_API_SITE = APP_CONFIG['USER_API_SITE']
 API_SITE = APP_CONFIG['API_SITE']
+SHARE_API_SITE = APP_CONFIG['SHARE_API_SITE']
 SECRET_KEY = APP_CONFIG['SECRET_KEY']
 THIS_SITE = APP_CONFIG['THIS_SITE']
 APP_PREFIX = APP_CONFIG['APP_PREFIX']
@@ -37,6 +38,7 @@ Rails::Initializer.run do |config|
   config.gem "nokogiri"
   config.gem "paperclip"
   config.gem "uuidtools"
+  config.gem "pie-service-lib"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

@@ -1,3 +1,4 @@
+require "pie-service-lib"
 class SaveOperationRecordMetal < BaseMetal 
   def self.routes
     {:method=>'PUT',:regexp=>/mindmaps\/do/}

@@ -1,28 +1,30 @@
 development:
   SECRET_KEY: ACUcfZ6C1XpBJCRP
   USER_API_SITE: http://dev.2010.mindpin.com
-  IMAGE_CACHE_SITE: http://192.168.1.8:5885
+  IMAGE_CACHE_SITE: http://dev.mindmap-image-cache.2010.mindpin.com
   ATTACHED_FILE_PATH_ROOT: /root/mindpin_base/mindpin_education_files/
   ATTACHED_FILE_URL_ROOT: http://img.edu.mindpin.com/
-
-  APP_PREFIX: app/mindmap_editor_cheng
+  SHARE_API_SITE: http://dev.share.2010.mindpin.com
+  APP_PREFIX: app/mindmap
   API_SITE: http://dev.2010.mindpin.com
   THIS_SITE: http://192.168.1.8:1661
 
 test:
   SECRET_KEY: ACUcfZ6C1XpBJCRP
   USER_API_SITE: http://192.168.1.8:5115
+  SHARE_API_SITE: http://dev.share.2010.mindpin.com
   IMAGE_CACHE_SITE: http://192.168.1.8:9530
   ATTACHED_FILE_PATH_ROOT: /root/mindpin_base/mindpin_education_files/
   ATTACHED_FILE_URL_ROOT: http://img.edu.mindpin.com/
 
-  APP_PREFIX: app/mindmap_editor_cheng
+  APP_PREFIX: app/mindmap
   API_SITE: http://192.168.1.8:3007
   THIS_SITE: http://192.168.1.8:1661
 
 production:
   SECRET_KEY: RlwcuvxHvBQqr87Y
   USER_API_SITE: http://userapi.mindpin.com
+  SHARE_API_SITE: http://share.2010.mindpin.com
   IMAGE_CACHE_SITE: http://mindmapimagecache.mindpin.com
   ATTACHED_FILE_PATH_ROOT: /web/apps/mindpin_mm_images/
   ATTACHED_FILE_URL_ROOT: http://img1.mindpin.com/

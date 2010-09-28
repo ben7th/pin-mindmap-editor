@@ -1,23 +1,23 @@
 %mp:layout tools
 %mp:title 编辑器 v0.35 - #{escape_title(@mindmap)}
 
-- bundle :css_path=>'/bundle_cache',:name=>'editor_v_3_5',:compress=>false do
-  = stylesheet_link_tag '/javascripts/pie/mindmap/css/mindmap_editor_page'
-  = stylesheet_link_tag '/javascripts/pie/mindmap/css/mindmap_canvas'
-  = stylesheet_link_tag '/javascripts/starbox/css/starbox'
 
-- bundle :js_path=>'/bundle_cache',:name=>'editor_v_3_5',:compress=>false do
-  = javascript_include_tag 'pie/mindmap/pie_dragdrop'
-  = javascript_include_tag 'pie/mindmap/pie_mindmap_node_dragdrop'
-  = javascript_include_tag 'pie/mindmap/pie_map_menu'
-  = javascript_include_tag 'pie/mindmap/pie_mindmap'
-  = javascript_include_tag 'pie/mindmap/pie_mindmap_node_editor'
-  = javascript_include_tag 'pie/mindmap/pie_opfactory'
+= stylesheet_link_tag '/stylesheets/mindmap_mouse_right_menu'
+= stylesheet_link_tag '/javascripts/pie/mindmap/css/mindmap_editor_page'
+= stylesheet_link_tag '/javascripts/pie/mindmap/css/mindmap_canvas'
+= stylesheet_link_tag '/javascripts/starbox/css/starbox'
 
-  = javascript_include_tag 'starbox/js/starbox'
-  = javascript_include_tag 'nicedit/nicEdit'
-  = javascript_include_tag 'excanvas/excanvas'
-  = javascript_include_tag 'views/time_keeper'
+= javascript_include_tag 'pie/mindmap/pie_dragdrop'
+= javascript_include_tag 'pie/mindmap/pie_mindmap_node_dragdrop'
+= javascript_include_tag 'pie/mindmap/pie_map_menu'
+= javascript_include_tag 'pie/mindmap/pie_mindmap'
+= javascript_include_tag 'pie/mindmap/pie_mindmap_node_editor'
+= javascript_include_tag 'pie/mindmap/pie_opfactory'
+
+= javascript_include_tag 'starbox/js/starbox'
+= javascript_include_tag 'nicedit/nicEdit'
+= javascript_include_tag 'excanvas/excanvas'
+= javascript_include_tag 'views/time_keeper'
 
 :javascript
   var mindmap;
