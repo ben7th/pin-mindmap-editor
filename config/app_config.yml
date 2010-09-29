@@ -26,9 +26,9 @@ production:
   USER_API_SITE: http://userapi.mindpin.com
   SHARE_API_SITE: http://share.2010.mindpin.com
   IMAGE_CACHE_SITE: http://mindmapimagecache.mindpin.com
-  ATTACHED_FILE_PATH_ROOT: /web/apps/mindpin_mm_images/
-  ATTACHED_FILE_URL_ROOT: http://img1.mindpin.com/
+  ATTACHED_FILE_PATH_ROOT: /web/2010/images/
+  ATTACHED_FILE_URL_ROOT: http://img.2010.mindpin.com/
 
   APP_PREFIX: app/mindmap_editor
-  API_SITE: http://www.mindpin.com
-  THIS_SITE: http://mm2010.mindpin.com
+  API_SITE: http://2010.mindpin.com
+  THIS_SITE: http://mindmap-editor.2010.mindpin.com
