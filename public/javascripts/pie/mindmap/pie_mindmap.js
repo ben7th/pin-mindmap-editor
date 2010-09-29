@@ -15,7 +15,7 @@
  *
  *  For details, to the web site: http://www.mindpin.com/
  *--------------------------------------------------------------------------*/
-var app_prefix = "app/mindmap"
+var app_prefix = "mindmap_editor"
 
 pie.mindmap = pie.mindmap || {};
 

@@ -5,7 +5,7 @@ development:
   ATTACHED_FILE_PATH_ROOT: /root/mindpin_base/mindpin_education_files/
   ATTACHED_FILE_URL_ROOT: http://img.edu.mindpin.com/
   SHARE_API_SITE: http://dev.share.2010.mindpin.com
-  APP_PREFIX: app/mindmap
+  APP_PREFIX: app/mindmap_editor
   API_SITE: http://dev.2010.mindpin.com
   THIS_SITE: http://192.168.1.8:1661
 
@@ -17,7 +17,7 @@ test:
   ATTACHED_FILE_PATH_ROOT: /root/mindpin_base/mindpin_education_files/
   ATTACHED_FILE_URL_ROOT: http://img.edu.mindpin.com/
 
-  APP_PREFIX: app/mindmap
+  APP_PREFIX: app/mindmap_editor
   API_SITE: http://192.168.1.8:3007
   THIS_SITE: http://192.168.1.8:1661
 
