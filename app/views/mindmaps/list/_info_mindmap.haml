@@ -17,8 +17,6 @@
 
   .mindmap-meta.fleft
     %h4.normal
-      - unless params[:user_id]
-        #{userlink(mindmap)}：
       <b>#{link_to escape_title(mindmap,23),mindmap,:target=>'_blank',:title=>mindmap.title}</b>
     .mindmap-datetime.fleft
       = show_time_by_order_type @order,mindmap
