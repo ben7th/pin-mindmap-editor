@@ -13,4 +13,6 @@
 
 class Node < ActiveRecord::Base
   belongs_to :mindmap
+
+  named_scope :order_by, lambda {|field| {:order=>field} }
 end

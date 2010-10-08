@@ -203,4 +203,5 @@ class Mindmap < ActiveRecord::Base
   include MindmapRankMethods
   include MindmapSearchMethods
   include MindmapParseStructMethods
+  include MindmapMd5Methods
 end
