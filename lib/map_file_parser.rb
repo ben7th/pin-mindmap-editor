@@ -30,18 +30,7 @@ class MapFileParser
   end
 
   def self.xslt_transform(sourcepath,xsltpath)
-    xslt = XML::XSLT.new()
-    xslt.xml = REXML::Document.new File.read(sourcepath)
-    xslt.xsl = REXML::Document.new File.read(xsltpath)
-    out=xslt.serve()
-    system_os = Config::CONFIG['host_os']
-    if system_os=="mswin32"
-      out.to_s
-    elsif system_os=="linux-gnu"
-      out.to_s.gsub(/&amp;/,'&')
-    else
-      out.to_s
-    end
+    self.xslt_transform_form_filepath(sourcepath,xsltpath)
   end
   
 end
