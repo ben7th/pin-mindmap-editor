@@ -6,8 +6,9 @@ development:
   ATTACHED_FILE_URL_ROOT: http://img.edu.mindpin.com/
   SHARE_API_SITE: http://dev.share.2010.mindpin.com
   APP_PREFIX: app/mindmap_editor
-  API_SITE: http://dev.2010.mindpin.com
-  THIS_SITE: http://192.168.1.8:1661
+  API_SITE: http://dev.app-adapter.2010.mindpin.com
+  THIS_SITE: http://dev.mindmap-editor.2010.mindpin.com
+
 
 test:
   SECRET_KEY: ACUcfZ6C1XpBJCRP

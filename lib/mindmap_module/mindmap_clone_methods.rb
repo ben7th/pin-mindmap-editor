@@ -1,9 +1,8 @@
 module MindmapCloneMethods
   def mindmap_clone(user,attributes)
-    return if self.private
     title = attributes[:title] || self.title
     struct = self.struct
-    mindmap = Mindmap.create!(:private=>false,:clone_from=>self.id,:user_id=>user.id,:title=>title,:struct=>struct)
+    mindmap = Mindmap.create!(:private=>self.private,:clone_from=>self.id,:user_id=>user.id,:title=>title,:struct=>struct)
     self.nodes.each do |node|
       local_id = node.local_id
       note = node.note
