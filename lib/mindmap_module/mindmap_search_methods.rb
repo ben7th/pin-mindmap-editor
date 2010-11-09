@@ -1,8 +1,10 @@
 module MindmapSearchMethods
   def relative_mindmaps
     return [] if self.rank.to_i == 0
-    mindmaps = Mindmap.search(self.major_words*"|",:match_mode => :boolean)
+      mindmaps = Mindmap.search(self.major_words*"|",:match_mode => :boolean)
     return (mindmaps-[self])[0...5]
+    rescue Exception => ex
+      return []
   end
 
   def major_words
