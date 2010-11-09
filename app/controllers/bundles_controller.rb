@@ -1,5 +1,4 @@
 class BundlesController < ApplicationController
-  before_filter :login_required
   before_filter :check_token
   skip_before_filter :verify_authenticity_token
 
