@@ -7,7 +7,9 @@ development:
   SHARE_API_SITE: http://dev.share.2010.mindpin.com
   APP_PREFIX: app/mindmap_editor
   API_SITE: http://dev.app-adapter.2010.mindpin.com
+  WORKSPACE_SITE: http://dev.workspace.2010.mindpin.com
   THIS_SITE: http://dev.mindmap-editor.2010.mindpin.com
+  DISCUSSION_SITE: http://dev.discuss.2010.mindpin.com
 
 
 test:
@@ -20,7 +22,9 @@ test:
 
   APP_PREFIX: app/mindmap_editor
   API_SITE: http://192.168.1.8:3007
+  WORKSPACE_SITE: http://dev.workspace.2010.mindpin.com
   THIS_SITE: http://192.168.1.8:1661
+  DISCUSSION_SITE: http://dev.discuss.2010.mindpin.com
 
 production:
   SECRET_KEY: RlwcuvxHvBQqr87Y
@@ -32,4 +36,6 @@ production:
 
   APP_PREFIX: app/mindmap_editor
   API_SITE: http://2010.mindpin.com
+  WORKSPACE_SITE: http://workspace.2010.mindpin.com
   THIS_SITE: http://mindmap-editor.2010.mindpin.com
+  DISCUSSION_SITE: http://discuss.2010.mindpin.com

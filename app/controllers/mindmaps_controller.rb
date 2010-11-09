@@ -5,6 +5,9 @@ class MindmapsController < ApplicationController
   # GET /mindmaps
   include MindmapFindingMethods
   def index
+    xml = HandleGetRequest.get_response(File.join(WORKSPACE_SITE,"workspaces/list.xml?req_user_id=#{current_user.id}")).body
+    @workspaces = Hash.from_xml(xml)["workspaces"] || []
+
     @user = User.find(params[:user_id]) if params[:user_id]
     @mindmaps = get_mindmaps(params[:user_id])
   end
@@ -229,6 +232,19 @@ class MindmapsController < ApplicationController
       :html=>@template.render(:partial=>"mindmaps/list/info_mindmap",
         :locals=>{:mindmap=>clone_m})
     }
+  end
+
+  def convert_bundle
+    @mindmap = Mindmap.find(params[:id])
+    res = Net::HTTP.post_form URI.parse(File.join(DISCUSSION_SITE,'/documents/mindmaps')),
+      :mindmap=>@mindmap.struct,:workspace_id=>params[:workspace_id],:req_user_id=>current_user.id
+
+    case res
+    when Net::HTTPSuccess, Net::HTTPRedirection
+      render :text=>"ok",:status=>200
+    else
+      render :text=>"error",:status=>500
+    end
   end
 
 end

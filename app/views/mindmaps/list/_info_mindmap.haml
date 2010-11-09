@@ -38,5 +38,8 @@
         .detail-operation.fleft.marginr5
           = render :partial=>'mindmaps/edit/box_clone',:locals=>{:mindmap=>mindmap}
 
+        .detail-operation.fleft.marginr5
+          = render :partial=>'mindmaps/edit/box_convert_bundle',:locals=>{:mindmap=>mindmap}
+
         .fleft.marginr5
           = link_to "<div class='edit-link'/><div>编辑</div>",edit_mindmap_path(mindmap),:target=>'_blank'
