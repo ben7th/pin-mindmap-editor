@@ -81,4 +81,5 @@ ActionController::Routing::Routes.draw do |map|
   map.do_set_font_italic "/api/do_set_font_italic/:id",:controller=>"api",:action=>"do_set_font_italic",:conditions=>{:method=>:put},:requirements => { :id => /\w+/ }
   # -----------  导图操作类API 结束  -----------
 
+  map.bundle_to_mindmap "/mindmaps/bundles",:controller=>"bundles",:action=>"create",:conditions=>{:method=>:post}
 end
