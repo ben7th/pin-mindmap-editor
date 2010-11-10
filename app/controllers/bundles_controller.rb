@@ -16,9 +16,15 @@ class BundlesController < ApplicationController
   end
 
   def check_token
-#    params[:req_user_id]
-#    params[:token]
-    @user = User.find(params[:req_user_id])
-    return true
+    key = SERVICE_KEY
+    req_user_id = params[:req_user_id]
+    token = params[:service_token]
+
+    require 'digest/sha1'
+    if(Digest::SHA1.hexdigest("#{req_user_id}#{key}") == token)
+      @user = User.find(req_user_id)
+    else
+      render :text=>401,:status=>401
+    end
   end
 end

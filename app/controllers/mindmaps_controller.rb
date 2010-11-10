@@ -236,8 +236,11 @@ class MindmapsController < ApplicationController
 
   def convert_bundle
     @mindmap = Mindmap.find(params[:id])
+
+    require 'digest/sha1'
+    service_token = Digest::SHA1.hexdigest("#{current_user.id}#{SERVICE_KEY}")
     res = Net::HTTP.post_form URI.parse(File.join(DISCUSSION_SITE,'/documents/mindmaps')),
-      :mindmap=>@mindmap.struct,:workspace_id=>params[:workspace_id],:req_user_id=>current_user.id
+      :mindmap=>@mindmap.struct,:workspace_id=>params[:workspace_id],:req_user_id=>current_user.id,:service_token=>service_token
 
     case res
     when Net::HTTPSuccess, Net::HTTPRedirection
