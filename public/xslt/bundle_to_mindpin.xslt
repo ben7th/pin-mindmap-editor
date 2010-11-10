@@ -5,7 +5,7 @@
   <xsl:template  match="bundle">
     <Nodes>
       <xsl:attribute name="maxid">
-        <xsl:value-of select="count(//image|//text)+1"/>
+        <xsl:value-of select="count(//image|//text|//link)+1"/>
       </xsl:attribute>
       <N id="0" f="0" t="根节点">
         <xsl:call-template name="node" />
@@ -14,7 +14,7 @@
   </xsl:template>
 
   <xsl:template name="node">
-    <xsl:for-each select="text|image">
+    <xsl:for-each select="text|image|link">
       <N>
         <xsl:choose>
           <xsl:when test="local-name()='text'">
@@ -44,6 +44,20 @@
               <xsl:value-of select="@src"/>
             </xsl:attribute>
           
+          </xsl:when>
+          <xsl:when test="local-name()='link'">
+
+            <xsl:variable name="z">
+              <xsl:number level="any" />
+            </xsl:variable>
+            <xsl:attribute name="id">
+              <xsl:value-of select="$z + count(//text|//image)"/>
+            </xsl:attribute>
+
+            <xsl:attribute name="t">
+              <xsl:value-of select="concat(@text,' -- ',@href)"/>
+            </xsl:attribute>
+            
           </xsl:when>
         </xsl:choose>
 
