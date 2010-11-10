@@ -43,6 +43,10 @@
             <xsl:attribute name="i">
               <xsl:value-of select="@src"/>
             </xsl:attribute>
+
+            <xsl:attribute name="ih">100</xsl:attribute>
+
+            <xsl:attribute name="iw">100</xsl:attribute>
           
           </xsl:when>
           <xsl:when test="local-name()='link'">
