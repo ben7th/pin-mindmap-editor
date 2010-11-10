@@ -1,4 +1,5 @@
 - mapid = mindmap.id
+- get_workspaces
 
 %mp:show-box{:box_id=>"convert_bundle_link_mindmap_#{mapid}"}
   .convert_bundle-link
@@ -12,6 +13,6 @@
   %mp:box-content
     -form_for [:convert_bundle,mindmap],:html=>{:id=>"convert_bundle_mindmap_#{mapid}"} do |t|
       %span 选择工作空间
-      =select_tag("workspace_id",options_for_select(@workspaces.map{|hash|[hash["name"],hash["id"]]}))
+      =select_tag("workspace_id",options_for_select(@workspaces.map{|hash| [hash["name"],hash["id"]] }))
 
-  %mp:box-button{:value=>"转发讨论",:form_id=>"convert_bundle_mindmap_#{mapid}",:close_box=>"true"}
+  %mp:box-button{:value=>"转发讨论",:form_id=>"convert_bundle_mindmap_#{mapid}"}

@@ -57,4 +57,10 @@ module MindmapHelper
     CGI.escapeHTML(truncate_u(mindmap.title,size))
   end
 
+  def get_workspaces
+    return if !!@workspaces || (@workspaces == [])
+    xml = HandleGetRequest.get_response(File.join(WORKSPACE_SITE,"workspaces/list.xml?req_user_id=#{current_user.id}")).body
+    @workspaces = Hash.from_xml(xml)["workspaces"] || []
+  end
+
 end

@@ -5,9 +5,6 @@ class MindmapsController < ApplicationController
   # GET /mindmaps
   include MindmapFindingMethods
   def index
-    xml = HandleGetRequest.get_response(File.join(WORKSPACE_SITE,"workspaces/list.xml?req_user_id=#{current_user.id}")).body
-    @workspaces = Hash.from_xml(xml)["workspaces"] || []
-
     @user = User.find(params[:user_id]) if params[:user_id]
     @mindmaps = get_mindmaps(params[:user_id])
   end
