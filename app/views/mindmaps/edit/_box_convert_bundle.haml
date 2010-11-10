@@ -14,4 +14,4 @@
       %span 选择工作空间
       =select_tag("workspace_id",options_for_select(@workspaces.map{|hash|[hash["name"],hash["id"]]}))
 
-  %mp:box-button{:value=>"转发讨论",:form_id=>"convert_bundle_mindmap_#{mapid}",:close_box=>"true",:ajax_list_id=>"mplist_user_#{current_user.id}_mindmaps",:ajax=>"true"}
+  %mp:box-button{:value=>"转发讨论",:form_id=>"convert_bundle_mindmap_#{mapid}",:close_box=>"true"}

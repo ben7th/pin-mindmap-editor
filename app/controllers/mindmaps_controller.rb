@@ -241,7 +241,7 @@ class MindmapsController < ApplicationController
 
     case res
     when Net::HTTPSuccess, Net::HTTPRedirection
-      render :text=>"ok",:status=>200
+      redirect_to [current_user,:mindmaps]
     else
       render :text=>"error",:status=>500
     end
